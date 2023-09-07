@@ -1,0 +1,132 @@
+body {
+    background: #313131;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.screen {
+    width: 450px;
+    border: 3px solid rgba(34, 124, 227, 0.8);
+    aspect-ratio: 10 / 16;
+    border-radius: 1rem;
+    background-color: rgba(34, 124, 227,0.15);
+    overflow: hidden;
+    position: relative;
+}
+
+.screen-overlay {
+    background: linear-gradient(
+        rgba(34, 124, 227, 0.15),
+        rgb(34, 124, 227, 0.15) 3px,
+        transparent 3px,
+        transparent 9px
+    );
+    height: 100%;
+    width: 100%;
+    background-size: 100% 9px;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    animation: pan-overlay 22s infinite linear;
+}
+
+.screen > .screen-image {
+    background-image: url(TwitterPic8.jpg);
+    height: 100%;
+    width: 100%;
+    background-size: 300%;
+    background-position: center;
+    object-fit: cover;
+    animation: pan-image 15s linear infinite;
+    position: absolute;
+    filter: sepia(40%) hue-rotate(295deg);
+}
+
+.screen .screen-content {
+    width: 450px;
+    aspect-ratio: 10 / 16;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+}
+
+.screen .screen-content h2 {
+    font-family: 'Algerian';
+    color: #000000;
+    font-size: 45px;
+    margin: 0;
+    text-shadow: 0 0 5px #ff0000, 
+    0 0 15px #ff0000, 
+    0 0 30px #f00;
+}
+
+.screen .screen-content h3 {
+    font-family: 'Bradley Hand ITC';
+    color: #7e1212;;
+    text-shadow: 0 0 5px #ffe900, 0 0 15px #ffe900, 0 0 30px #ffe900;
+}
+
+@keyframes pan-overlay {
+    from {
+        background-position: 0% 0%;
+    }
+
+    to {
+        background-position: 0% -100%;
+    }
+}
+@keyframes pan-image {
+    0% {
+        background-position: 36% 15%;
+        background-size: 200%;
+    }
+
+    20% {
+        background-position: 30% 35%;
+        background-size: 200%;
+    }
+
+    20.0001% {
+        background-position: 60% 85%;
+        background-size: 500%;
+    }
+
+    40% {
+        background-position: 49% 81%;
+        background-size: 500%;
+    }
+
+    40.0001% {
+        background-position: 80% 42%;
+        background-size: 300%;
+    }
+
+    60% {
+        background-position: 84% 33%;
+        background-size: 300%;
+    }
+
+    60.0001% {
+        background-position: 0% 0%;
+        background-size: 300%;
+    }
+
+    80% {
+        background-position: 15% 4%;
+        background-size: 300%;
+    }
+
+    80.0001% {
+        background-position: 65% 25%;
+        background-size: 250%;
+    }
+
+    100% {
+        background-position: 80% 50%;
+        background-size: 300%;
+    }
+}
